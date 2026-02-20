@@ -34,12 +34,12 @@ struct OpticalProps{
 	std::string transparency;
 };
 
-enum class Family{Metal,Ceramic,Polymer,Composite,Semiconductor,Natural};
-
+/*enum class Family{Metal,Ceramic,Polymer,Composite,Semiconductor,Natural};
+*/
 class Material{
 public:
 	std::string name;
-	Family family;
+	std::string family;
 	MechanicalProps mech;
 	ElectricalProps elec;
 	ChemicalProps chem;
@@ -47,7 +47,7 @@ public:
 	OpticalProps optics;
 
 	//constructor 
-	Material(std::string name, Family family, MechanicalProps mech,ElectricalProps elec,
+	Material(std::string name, std::string family, MechanicalProps mech,ElectricalProps elec,
 		ChemicalProps chem,ThermalProps therm,OpticalProps optics): name(name), family(family), mech(mech),elec(elec),chem(chem),therm(therm),optics(optics){};
 
 	// methods 

@@ -19,6 +19,7 @@ int main()
 	const auto&m = allMaterials[0];
 	std::cout<<"Testing Entry #1:"<<std::endl;
 	std::cout<<"Name: "<<m.name<<std::endl;
+	std::cout<<"Family: "<<m.family<<std::endl;
 	std::cout<<"Density: "<<m.mech.density<<"kg/m3"<<std::endl;
 	std::cout<<"modulus: "<<m.mech.modulus<<std::endl;
 	std::cout<<"T_strenght: "<<m.mech.tensileStrength<<std::endl;
