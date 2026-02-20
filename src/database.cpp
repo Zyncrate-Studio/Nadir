@@ -11,7 +11,7 @@
 std::vector<Material>allMaterials; 
 	
 
-Family stringToFamily(std::string f){
+/*Family stringToFamily(std::string f){
 	if (f=="Metal") return Family::Metal;
 	if (f=="Ceramic") return Family::Ceramic;
 	if (f=="Polymer") return Family::Polymer;
@@ -20,7 +20,7 @@ Family stringToFamily(std::string f){
 	if (f=="Natural") return Family::Natural;
 	return Family::Natural;
 };
-
+*/
 
 
 void loadDataFromDB(){
@@ -47,14 +47,14 @@ void loadDataFromDB(){
 
 		
 		std::string name=reinterpret_cast<const char*>(sqlite3_column_text(stmt,0));// method to use for strings if the column has strings
-		Family family= stringToFamily((const char*)sqlite3_column_text(stmt,1));
+		std::string family= reinterpret_cast<const char*>((const char*)sqlite3_column_text(stmt,1));
 
 		MechanicalProps mech;
 		mech.density=sqlite3_column_double(stmt,2);
-		mech.modulus=sqlite3_column_double(stmt,11);
-		mech.tensileStrength=sqlite3_column_double(stmt,12);
-		mech.hardness=sqlite3_column_double(stmt,13);
-		mech.p_ratio=sqlite3_column_double(stmt,14);
+		mech.modulus=sqlite3_column_double(stmt,10);
+		mech.tensileStrength=sqlite3_column_double(stmt,11);
+		mech.hardness=sqlite3_column_double(stmt,12);
+		mech.p_ratio=sqlite3_column_double(stmt,13);
 
 		ThermalProps therm;
 		therm.conductivity=sqlite3_column_double(stmt,3);
@@ -63,17 +63,17 @@ void loadDataFromDB(){
 		therm.heatcapacity=sqlite3_column_double(stmt,4);
 
 		ElectricalProps elec;
-		elec.d_constant=sqlite3_column_double(stmt,16);
-		elec.resistivity=sqlite3_column_double(stmt,15);
+		elec.d_constant=sqlite3_column_double(stmt,15);
+		elec.resistivity=sqlite3_column_double(stmt,14);
 		
 		OpticalProps optics;
 		optics.transparency=reinterpret_cast<const char*>(sqlite3_column_text(stmt,8));
 		optics.refractive_index=sqlite3_column_double(stmt,7);
 		
 		ChemicalProps chem;
-		chem.corrosion_resistance=reinterpret_cast<const char*>(sqlite3_column_text(stmt,10));
-		chem.ph_min=sqlite3_column_double(stmt,17);
-		chem.ph_max=sqlite3_column_double(stmt,18);
+		chem.corrosion_resistance=reinterpret_cast<const char*>(sqlite3_column_text(stmt,9));
+		chem.ph_min=sqlite3_column_double(stmt,16);
+		chem.ph_max=sqlite3_column_double(stmt,17);
 
 		allMaterials.emplace_back(name,family,mech,elec,chem,therm,optics);
 	}
