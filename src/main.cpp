@@ -1,15 +1,16 @@
 #include <iostream>
 #include <iomanip> // pretty printing
-#include "../include/material.h"
+#include "../include/globals.h"
 
 void loadDataFromDB();
+void Categorize();
 
 
 
 int main()
 {
 
-	std::cout<<"-----Material Selector System -----"<<std::endl;
+	std::cout<<"-----Material Selector System -----\n"<<std::endl;
 	loadDataFromDB();
 	if(allMaterials.empty()){
 		std::cout<<"Error: No materials loaded. Check Database"<<std::endl;
@@ -19,6 +20,7 @@ int main()
 	const auto&m = allMaterials[0];
 	std::cout<<"Testing Entry #1:"<<std::endl;
 	std::cout<<"Name: "<<m.name<<std::endl;
+	std::cout<<"Family: "<<m.family<<std::endl;
 	std::cout<<"Density: "<<m.mech.density<<"kg/m3"<<std::endl;
 	std::cout<<"modulus: "<<m.mech.modulus<<std::endl;
 	std::cout<<"T_strenght: "<<m.mech.tensileStrength<<std::endl;
@@ -35,6 +37,8 @@ int main()
 	std::cout<<"T_melting point: "<<m.therm.meltingpoint<<std::endl;
 	std::cout<<"T_expansion: "<<m.therm.expansion<<std::endl;
 	std::cout<<"T_heat capacity: "<<m.therm.heatcapacity<<std::endl;
+
+	Categorize();
 
 	return 0;
 }

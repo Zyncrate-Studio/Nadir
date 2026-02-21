@@ -14,7 +14,6 @@ set(SOURCE_FILES
     src/main.cpp 
     src/database.cpp 
     src/sqlite3.c
-    src/material-imp.cpp
     src/mathutil.cpp
     src/selector.cpp
 )
