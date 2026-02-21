@@ -9,7 +9,7 @@ void loadDataFromDB();
 int main()
 {
 
-	std::cout<<"-----Material Selector System -----"<<std::endl;
+	std::cout<<"-----Material Selector System -----\n"<<std::endl;
 	loadDataFromDB();
 	if(allMaterials.empty()){
 		std::cout<<"Error: No materials loaded. Check Database"<<std::endl;

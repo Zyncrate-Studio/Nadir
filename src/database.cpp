@@ -11,18 +11,6 @@
 std::vector<Material>allMaterials; 
 	
 
-/*Family stringToFamily(std::string f){
-	if (f=="Metal") return Family::Metal;
-	if (f=="Ceramic") return Family::Ceramic;
-	if (f=="Polymer") return Family::Polymer;
-	if (f=="Composite") return Family::Composite;
-	if (f=="Semiconductor") return Family::Semiconductor;
-	if (f=="Natural") return Family::Natural;
-	return Family::Natural;
-};
-*/
-
-
 void loadDataFromDB(){
 	sqlite3* db = nullptr;
 	int result = sqlite3_open("materials.db", &db);
@@ -78,7 +66,7 @@ void loadDataFromDB(){
 		allMaterials.emplace_back(name,family,mech,elec,chem,therm,optics);
 	}
 	sqlite3_finalize(stmt); //frees memory
-	std::cout<<"Loaded "<<allMaterials.size()<<" materials."<<std::endl;
+	std::cout<<"Loaded "<<allMaterials.size()<<" materials.\n"<<std::endl;
 
 }
 

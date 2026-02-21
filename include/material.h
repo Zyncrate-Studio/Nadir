@@ -50,14 +50,6 @@ public:
 	Material(std::string name, std::string family, MechanicalProps mech,ElectricalProps elec,
 		ChemicalProps chem,ThermalProps therm,OpticalProps optics): name(name), family(family), mech(mech),elec(elec),chem(chem),therm(therm),optics(optics){};
 
-	// methods 
-	/*void Populate(std::string name,
-	Family family,
-	MechanicalProps mech,
-	ElectricalProps elec,
-	ChemicalProps chem,
-	ThermalProps therm,
-	OpticalProps optics);*/
 
 	void retrieve(); /*to test console adjust later
 						for gui maybe seperate each member*/
