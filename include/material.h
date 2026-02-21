@@ -51,8 +51,6 @@ public:
 		ChemicalProps chem,ThermalProps therm,OpticalProps optics): name(name), family(family), mech(mech),elec(elec),chem(chem),therm(therm),optics(optics){};
 
 
-	void retrieve(); /*to test console adjust later
-						for gui maybe seperate each member*/
 };
 
-extern std::vector<Material> allMaterials;
+

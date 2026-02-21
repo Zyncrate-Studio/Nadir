@@ -1,6 +1,6 @@
 // material data would be loaded in here 
 
-#include "../include/material.h"
+#include "../include/globals.h"
 #include "../include/sqlite3.h"
 #include <vector>
 #include <iostream>

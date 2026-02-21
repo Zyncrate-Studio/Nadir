@@ -1,8 +1,9 @@
 #include <iostream>
 #include <iomanip> // pretty printing
-#include "../include/material.h"
+#include "../include/globals.h"
 
 void loadDataFromDB();
+void Categorize();
 
 
 
@@ -36,6 +37,8 @@ int main()
 	std::cout<<"T_melting point: "<<m.therm.meltingpoint<<std::endl;
 	std::cout<<"T_expansion: "<<m.therm.expansion<<std::endl;
 	std::cout<<"T_heat capacity: "<<m.therm.heatcapacity<<std::endl;
+
+	Categorize();
 
 	return 0;
 }
