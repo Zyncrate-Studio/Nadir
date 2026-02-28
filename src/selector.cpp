@@ -27,6 +27,7 @@ void Categorize(){
 		else if(material.family=="Semiconductor") Semiconductor.push_back(material);
 		else if(material.family=="Natural") Natural.push_back(material);
 	}
-	std::cout<<"\nDone Categorizing"<<std::endl;
 }
 
+/*function that works with the category to carry out the selection process
+*/
