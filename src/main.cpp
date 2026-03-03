@@ -1,9 +1,11 @@
 #include <iostream>
-#include <iomanip> // pretty printing
+#include <iomanip>
+#include <string> // pretty printing
 #include "../include/globals.h"
 
 void loadDataFromDB();
 void Categorize();
+std::string symbol; // for <= or >= in passing values
 
 
 

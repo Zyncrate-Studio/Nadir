@@ -6,7 +6,7 @@
 struct MechanicalProps{
 	double density;
 	double modulus;
-	double tensileStrength;
+	double tensilestrength;
 	double hardness;
 	double p_ratio;//poissons_ratio
 };
@@ -52,5 +52,16 @@ public:
 
 
 };
+
+struct t_HC{
+	std::string property_name;
+	double value;
+};
+
+struct t_SC{
+	std::string property_name;
+	double value;
+}
+
 
 
