@@ -9,6 +9,12 @@
 
 
 std::vector<Material>allMaterials; 
+std::vector<Material>Metals;
+std::vector<Material>Ceramic;
+std::vector<Material>Polymer;
+std::vector<Material>Composite;
+std::vector<Material>Semiconductor;
+std::vector<Material>Natural;
 	
 
 void loadDataFromDB(){
@@ -71,3 +77,14 @@ void loadDataFromDB(){
 }
 
 
+void Categorize(){
+
+	for(const auto& material:allMaterials){
+		if (material.family=="Metal") Metals.push_back(material);
+		else if(material.family=="Ceramic") Ceramic.push_back(material);
+		else if(material.family=="Polymer") Polymer.push_back(material);
+		else if(material.family=="Composite") Composite.push_back(material);
+		else if(material.family=="Semiconductor") Semiconductor.push_back(material);
+		else if(material.family=="Natural") Natural.push_back(material);
+	}
+}
